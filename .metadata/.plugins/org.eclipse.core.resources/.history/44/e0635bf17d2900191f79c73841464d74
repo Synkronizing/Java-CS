@@ -22,8 +22,7 @@ public class ArrayTester {
 		System.out.print(doit);
 		}
 	/**
-	 * 
-	 * <p>Constructing a new array "result" from arr2D.length earns you a point</p>
+	 * <p>Constructing a new array "result" from arr2D.length earns you a a point</p>
 	 * <p>Accesses all items in one column of arr2D for one point</p>
 	 * <p>Assigning one element from arr2D to result for one point</p>
 	 * <p>The return has all the elements in the right order from arr2D for one point</p>
