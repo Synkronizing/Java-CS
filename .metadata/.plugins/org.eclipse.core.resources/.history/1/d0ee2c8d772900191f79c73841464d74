@@ -1,0 +1,51 @@
+/**
+ * 
+ * @author Josh S
+ * Declares header: public class CodeWordChecker implements StringChecker (one point)
+ * Declares all appropriate private instance variables (one point)
+ * Declares headers: public CodeWordChecker(int __,int__,String__) and public CodeWordChecker(String__) (one point)
+ *
+ */
+public class CodeWordChecker implements StringChecker {
+	private int minLength;
+	private int maxLength;
+	private String notAllowed;
+	public boolean isValid(String str) {
+		return str.length()>= minLength && str.length() <= maxLength && str.indexOf(notAllowed)== -1;
+	}
+	/**
+	 * 
+	 * @param minLen
+	 * @param maxLen
+	 * @param symbol
+	 * Uses all parameters to initialize instance variables in 3 parameter constructor (one point)
+	 */
+	public CodeWordChecker(int minLen,int maxLen, String symbol) {
+		minLength = minLen;
+		maxLength = maxLen;
+		notAllowed = symbol;
+	}
+	/**
+	 * 
+	 * @param symbol
+	 * Uses parameter and default values to initialize instance variables in 1-parameter constructor (one point)
+	 */
+	public CodeWordChecker(String symbol) {
+		minLength=6;
+		maxLength=20;
+		notAllowed = symbol;
+	}
+	public static void main(String[] args) {
+		
+		System.out.println(sc1.isValid("happy"));
+		System.out.println(sc1.isValid("happy$"));
+		System.out.println(sc1.isValid("code"));
+		System.out.println(sc1.isValid("happyCode"));
+		
+		System.out.println(sc2.isValid("MyPass"));
+		System.out.println(sc2.isValid("Mypassport"));
+		System.out.println(sc2.isValid("happy"));
+		System.out.println(sc2.isValid("1,000,000,000,000,000"));
+		
+	}
+}

@@ -1,0 +1,8 @@
+
+public interface StringChecker {
+	public static void main(String[] args) {
+		StringChecker sc1 = new CodeWordChecker(5,8,"$");
+		boolean isValid(sc1);
+		
+	}
+}

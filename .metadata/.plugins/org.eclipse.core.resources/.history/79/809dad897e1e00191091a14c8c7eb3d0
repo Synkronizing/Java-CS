@@ -1,0 +1,6 @@
+
+public class CodeWordChecker implements StringChecker {
+	public boolean isValid(String str) {
+		return str.length()>= minLength && str.length() <= maxLength %% str.indexOf(notAllowed)== -1;
+	}
+}

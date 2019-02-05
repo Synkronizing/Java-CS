@@ -1,0 +1,78 @@
+
+public class ArrayTester {
+	public static void main(String[] args) {
+		int[][] arr2D = { {0,1,2},
+				{3,4,5},
+				{6,7,8},
+				{9,5,3}};
+		int[][] square = { 
+				{0,1,2},
+				{1,2,0},
+				{2,0,1}};
+		
+		int[] result = ArrayTester.getColumn(arr2D,1);
+		for(int b=0;b<result.length;b++) {
+			System.out.println(result[b]);
+		}
+		boolean doit = ArrayTester.isLatin(square);
+		System.out.print(doit);
+		}
+		
+	public static int[] getColumn(int[][] arr2D, int c) {
+		int[] result = new int[arr2D.length];
+		for(int r=0;r<arr2D.length;r++) {
+			result[r] = arr2D[r][c];
+		}
+		return result;
+	}
+	public static boolean isLatin(int[][] square) {
+		if(containsDuplicates(square[0]))
+		{
+			return false;
+		}
+		for(int r=1;r< square.length;r++) {
+			if(!hasAllValues(square[0],square[r])) {
+				return false;
+			}
+		}
+		for(int c=0;c<square[0].length;c++) {
+			if(!hasAllValues(square[0],getColumn(square,c))) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static boolean hasAllValues(int[] arr1, int[] arr2) {
+		int[] dup = {0,0,0};
+		boolean ans = true;
+		
+		for(int a=0;a<arr1.length;a++) {
+			for(int t=0;t<arr1.length;t++) {
+				if(arr1[a]==arr2[t]) {
+					dup[a]=dup[a]+1;
+				}
+			}
+		}
+		int first = dup[0];
+		for(int i = 1; i < arr1.length && ans; i++)
+		{
+		  if (dup[i] != first) {
+			  ans = false;
+		  }
+		}
+		if (ans==true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+	}
+	public static boolean containsDuplicates(int[] arr) {
+		for(int r=0;r<arr.length;r++) {
+			if(square[r]==square[0])
+			
+		}
+		return false;
+	}
+}

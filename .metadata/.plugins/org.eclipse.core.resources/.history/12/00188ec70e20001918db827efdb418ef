@@ -1,0 +1,6 @@
+
+public class ArrayTester {
+	public static getColumn(int[][] arr2d, int c) {
+		
+	}
+}

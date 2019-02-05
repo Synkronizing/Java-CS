@@ -1,0 +1,27 @@
+
+public class CodeWordChecker implements StringChecker {
+	private int minLength;
+	private int maxLength;
+	private String notAllowed;
+	public boolean isValid(String str) {
+		return str.length()>= minLength && str.length() <= maxLength && str.indexOf(notAllowed)== -1;
+	}
+	public CodeWordChecker(int minLen,int maxLen, String symbol) {
+		minLength = minLen;
+		maxLength = maxLen;
+		notAllowed = symbol;
+	}
+	public CodeWordChecker(String symbol) {
+		minLength=6;
+		maxLength=20;
+		notAllowed = symbol;
+	}
+	public static void main(String[] args) {
+		
+		System.out.println(sc1.isValid("happy"));
+		System.out.println(sc1.isValid("happy$"));
+		System.out.println(sc1.isValid("code"));
+		System.out.println(sc1.isValid("happyCode"));
+		
+	}
+}
